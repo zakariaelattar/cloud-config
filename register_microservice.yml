@@ -1,0 +1,20 @@
+spring:
+  application:
+    # sets the name in Eureka
+    name: ${springboot.app.name:register_microservice}
+
+server:
+    port: 8761
+# eureka.client.register-with-eureka=false
+# eureka.client.fetch-registry=false
+# eureka.client.service-url= http://192.168.99.101:8761/eureka/
+# eureka.client.service-url.defaultZone=http://192.168.99.101:8761/eureka/
+
+eureka:
+  instance:
+    hostname: ${springboot.app.name:register_microservice}
+  client:
+    registerWithEureka: true
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://192.168.99.101:8761/eureka/
